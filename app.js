@@ -108,21 +108,31 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 
         coursesGrid.innerHTML = filtered.map(course => `
-            <div class="bg-white border border-zinc-100 p-6 rounded-[2.5rem] hover:shadow-xl hover:shadow-zinc-200/50 hover:border-yellow-400/50 transition-all duration-500 group cursor-pointer flex flex-col h-full relative overflow-hidden" data-id="${course.id}">
-                <div class="absolute top-4 right-4 w-8 h-8 rounded-full bg-zinc-50 border border-zinc-100 flex items-center justify-center opacity-0 group-hover:opacity-100 group-hover:bg-yellow-400 transition-all duration-300">
-                    <svg class="w-4 h-4 text-zinc-900" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+            <div class="bento-card p-6 rounded-[2.5rem] hover:shadow-xl hover:shadow-zinc-200/50 hover:border-yellow-400/50 transition-all duration-500 group cursor-pointer flex flex-col h-full relative overflow-hidden" data-id="${course.id}">
+                <div class="aspect-video rounded-2xl overflow-hidden mb-4 bg-gray-100 border border-gray-100">
+                    <img src="https://source.unsplash.com/random/400x250?${course.category.toLowerCase()}" 
+                         class="w-full h-full object-cover group-hover:scale-105 transition duration-500" alt="${course.title}">
                 </div>
-                <div class="flex justify-between items-start mb-4">
+                <div class="flex justify-between items-center mb-3">
                     <span class="bg-yellow-400 text-black text-[9px] px-2.5 py-1 rounded-full font-black uppercase tracking-widest">${course.category}</span>
                     <span class="text-zinc-400 text-[10px] font-bold uppercase tracking-tighter">${course.duration}</span>
                 </div>
-                <h4 class="text-zinc-900 font-bold text-lg leading-tight group-hover:text-yellow-600 transition-colors mb-4">${course.title}</h4>
-                <div class="mt-auto pt-4 border-t border-zinc-50 flex items-center justify-between">
+                <h4 class="text-zinc-900 font-bold text-lg leading-tight group-hover:text-yellow-600 transition-colors mb-2">${course.title}</h4>
+                <p class="text-zinc-500 text-sm mb-4">${course.outcome}</p>
+                
+                <div class="flex flex-wrap gap-2 mb-4">
+                    ${course.tools.map(tool => `<span class="bg-zinc-100 px-3 py-1 rounded-full text-xs font-medium text-zinc-600">${tool}</span>`).join('')}
+                </div>
+
+                <div class="mt-auto pt-4 border-t border-zinc-100 flex items-center justify-between">
+                    <span class="text-zinc-900 text-base font-extrabold">$${course.priceUSD.toLocaleString()}</span>
                     <span class="text-zinc-500 text-[10px] font-bold uppercase flex items-center gap-2">
-                        <span class="w-1.5 h-1.5 rounded-full bg-green-500"></span>
+                        <span class="w-1.5 h-1.5 rounded-full ${course.type === 'Live Online' ? 'bg-green-500' : 'bg-blue-500'}"></span>
                         ${course.type}
                     </span>
-                    <svg class="w-5 h-5 text-zinc-300 group-hover:text-yellow-500 transform group-hover:translate-x-1 transition-all" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                </div>
+                <div class="absolute inset-0 flex items-center justify-center bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
                 </div>
             </div>
         `).join('');

@@ -190,7 +190,7 @@ h2.mixed-title {
 
 @media (max-width: 768px) {
     nav .container-wide {
-        padding-right: 1.5rem;
+        padding-right: 1rem;
         padding-left: 1.5rem;
     }
 
