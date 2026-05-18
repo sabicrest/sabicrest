@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Courses | Sabicrest Curriculum</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="antialiased">
+
+    <!-- Dynamic Detail Overlay -->
+    <div id="detail-overlay" class="fixed inset-0 bg-white/95 backdrop-blur-3xl z-[110] hidden overflow-y-auto pt-12 pb-10">
+        <div class="container-wide max-w-6xl">
+            <div class="flex justify-between items-center mb-16">
+                <button id="close-detail" class="flex items-center gap-2 text-zinc-400 hover:text-zinc-900 font-bold uppercase text-[10px] tracking-widest transition-colors">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
+                    Back to Browse
+                </button>
+                <div class="text-[10px] font-black tracking-widest uppercase text-yellow-500">Course Prospectus</div>
+            </div>
+            <div id="detail-content"></div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="sticky top-0 z-50 bg-white/70 backdrop-blur-xl border-b border-gray-100/50">
+        <div class="container-wide py-4 flex justify-between items-center">
+            <a href="index.html" class="text-2xl font-extrabold tracking-tighter italic hover:opacity-80 transition-opacity cursor-pointer">SABICREST</a>
+            <div class="hidden md:flex space-x-8 text-sm font-medium">
+                <a href="index.html" class="hover:text-yellow-500 transition">Home</a>
+                <a href="courses.html" class="text-yellow-600">Courses</a>
+                <a href="about.html" class="hover:text-yellow-500 transition">About</a>
+                <a href="blog.html" class="hover:text-yellow-500 transition">Blog</a>
+                <a href="#" class="hover:text-yellow-500 transition">Live Online</a>
+                <a href="#" class="hover:text-yellow-500 transition">For Teams</a>
+            </div>
+            <div class="flex items-center gap-1 md:gap-4">
+                <button id="enroll-btn" class="bg-yellow-400 text-black px-4 py-2 md:px-7 md:py-3 rounded-full font-bold text-[10px] md:text-xs uppercase tracking-widest hover:bg-yellow-500 hover:shadow-lg hover:shadow-yellow-400/20 transition-all active:scale-95">
+                    Enroll
+                </button>
+                <button id="mobile-menu-btn" class="md:hidden pr-0 pl-1 py-2 text-zinc-900 focus:outline-none">
+                    <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path id="menu-icon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="md:hidden">
+            <div class="flex flex-col h-full justify-between">
+                <div class="flex flex-col space-y-4">
+                    <a href="index.html" class="mobile-nav-link text-zinc-400">Home</a>
+                    <a href="courses.html" class="mobile-nav-link text-yellow-600">Courses</a>
+                    <a href="about.html" class="mobile-nav-link text-zinc-400">About</a>
+                    <a href="blog.html" class="mobile-nav-link text-zinc-400">Blog</a>
+                    <a href="#" class="mobile-nav-link text-zinc-400">Live Online</a>
+                    <a href="#" class="mobile-nav-link text-zinc-400">For Teams</a>
+                </div>
+                
+                <div class="border-t border-zinc-100 pt-8 pb-12">
+                    <p class="text-[10px] font-black uppercase tracking-[0.2em] text-zinc-400 mb-6">Our Location</p>
+                    <p class="text-zinc-900 font-bold mb-8 italic text-lg">Lagos • London • Remote</p>
+                    <div class="flex gap-6">
+                        <a href="#" class="text-zinc-400 hover:text-zinc-900 transition-colors">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/></svg>
+                        </a>
+                        <a href="#" class="text-zinc-400 hover:text-zinc-900 transition-colors">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Course Page Content -->
+    <main class="container-wide pt-8 pb-16 md:py-16">
+        <div class="mb-16">
+            <h1 class="mixed-title mb-4">Our Curriculum</h1>
+            <p class="text-zinc-500 text-lg max-w-2xl font-medium mb-6 md:mb-10">Browse 50+ industry-leading live courses designed to make you marketable globally.</p>
+            <div class="flex flex-wrap gap-3 md:gap-6">
+                <a href="#category-filters" class="bg-yellow-400 text-black px-10 py-5 rounded-none text-sm font-bold uppercase tracking-widest hover:bg-yellow-500 transition-all">Get Started</a>
+            </div>
+        </div>
+
+        <!-- Search and Filter Bar -->
+        <div class="flex flex-col md:flex-row gap-6 mb-12 items-center justify-between border-b border-zinc-100 pb-12">
+            <div id="category-filters" class="flex flex-wrap gap-2">
+                <!-- Populated by JS -->
+            </div>
+            <div class="relative w-full md:w-96">
+                <input type="text" id="course-search" placeholder="Search by skills, tools or course name..." class="w-full bg-zinc-50 border border-zinc-200 rounded-2xl px-6 py-4 text-sm focus:ring-2 focus:ring-yellow-400 outline-none transition-all">
+            </div>
+        </div>
+
+        <div id="all-courses-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+            <!-- Dynamically populated by JS -->
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-50 py-16 mt-20">
+        <div class="container-wide grid grid-cols-2 md:grid-cols-4 gap-12">
+            <div class="col-span-2">
+                <div class="text-2xl font-extrabold tracking-tighter italic mb-6">SABICREST</div>
+                <p class="text-gray-500 max-w-xs leading-tight">Empowering the next generation of professionals through immersive, live education.</p>
+            </div>
+            <div>
+                <h5 class="font-bold mb-4">Navigation</h5>
+                <ul class="text-sm space-y-2 text-gray-600">
+                    <li><a href="index.html" class="hover:text-yellow-500 transition">Home</a></li>
+                    <li><a href="courses.html" class="hover:text-yellow-500 transition">Courses</a></li>
+                    <li><a href="about.html" class="hover:text-yellow-500 transition">About</a></li>
+                    <li><a href="blog.html" class="hover:text-yellow-500 transition">Blog</a></li>
+                    <li><a href="#" class="hover:text-yellow-500 transition">Live Online</a></li>
+                    <li><a href="#" class="hover:text-yellow-500 transition">For Teams</a></li>
+                </ul>
+            </div>
+            <div>
+                <h5 class="font-bold mb-4">Company</h5>
+                <ul class="text-sm space-y-2 text-gray-600">
+                    <li>About Us</li>
+                    <li>Careers</li>
+                    <li>Contact</li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>

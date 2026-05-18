@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sabicrest | Master Marketable Skills</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="antialiased">
+
+    <!-- Dynamic Detail Overlay -->
+    <div id="detail-overlay" class="fixed inset-0 bg-white/95 backdrop-blur-3xl z-[110] hidden overflow-y-auto pt-12 pb-10">
+        <div class="container-wide max-w-6xl">
+            <div class="flex justify-between items-center mb-16">
+                <button id="close-detail" class="flex items-center gap-2 text-zinc-400 hover:text-zinc-900 font-bold uppercase text-[10px] tracking-widest transition-colors">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
+                    Back to Browse
+                </button>
+                <div class="text-[10px] font-black tracking-widest uppercase text-yellow-500">Course Prospectus</div>
+            </div>
+            <div id="detail-content"></div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="sticky top-0 z-50 bg-white/70 backdrop-blur-xl border-b border-gray-100/50">
+        <div class="container-wide py-4 flex justify-between items-center">
+            <a href="index.html" class="text-2xl font-extrabold tracking-tighter italic hover:opacity-80 transition-opacity cursor-pointer">SABICREST</a>
+            <div class="hidden md:flex space-x-8 text-sm font-medium">
+                <a href="index.html" class="text-yellow-600">Home</a>
+                <a href="courses.html" class="hover:text-yellow-500 transition">Courses</a>
+                <a href="about.html" class="hover:text-yellow-500 transition">About</a>
+                <a href="blog.html" class="hover:text-yellow-500 transition">Blog</a>
+                <a href="#" class="hover:text-yellow-500 transition">Live Online</a>
+                <a href="#" class="hover:text-yellow-500 transition">For Teams</a>
+            </div>
+            <div class="flex items-center gap-1 md:gap-4">
+                <button id="enroll-btn" class="bg-yellow-400 text-black px-4 py-2 md:px-7 md:py-3 rounded-full font-bold text-[10px] md:text-xs uppercase tracking-widest hover:bg-yellow-500 hover:shadow-lg hover:shadow-yellow-400/20 transition-all active:scale-95">
+                    Enroll
+                </button>
+                <button id="mobile-menu-btn" class="md:hidden pr-0 pl-1 py-2 text-zinc-900 focus:outline-none">
+                    <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path id="menu-icon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="md:hidden">
+            <div class="flex flex-col h-full justify-between">
+                <div class="flex flex-col space-y-4">
+                    <a href="index.html" class="mobile-nav-link text-zinc-900">Home</a>
+                    <a href="courses.html" class="mobile-nav-link text-zinc-400">Courses</a>
+                    <a href="about.html" class="mobile-nav-link text-zinc-400">About</a>
+                    <a href="blog.html" class="mobile-nav-link text-zinc-400">Blog</a>
+                    <a href="#" class="mobile-nav-link text-zinc-400">Live Online</a>
+                    <a href="#" class="mobile-nav-link text-zinc-400">For Teams</a>
+                </div>
+                
+                <div class="border-t border-zinc-100 pt-8 pb-12">
+                    <p class="text-[10px] font-black uppercase tracking-[0.2em] text-zinc-400 mb-6">Our Location</p>
+                    <p class="text-zinc-900 font-bold mb-8 italic text-lg">Lagos • London • Remote</p>
+                    <div class="flex gap-6">
+                        <a href="#" class="text-zinc-400 hover:text-zinc-900 transition-colors">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/></svg>
+                        </a>
+                        <a href="#" class="text-zinc-400 hover:text-zinc-900 transition-colors">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="container-wide pt-8 md:pt-16 pb-12">
+        <div class="grid lg:grid-cols-2 gap-12 items-center">
+            <div>
+                <h1 class="mixed-title mb-6">
+                    Master the skills <span>the world is hiring for.</span>
+                </h1>
+                <p class="text-lg text-gray-600 mb-4 md:mb-8 max-w-md leading-snug">
+                    Over 50 industry-standard courses delivered live by experts from Silicon Valley to London.
+                </p>
+                <div class="flex flex-wrap gap-3 md:gap-6 mt-6 md:mt-10">
+                    <a href="courses.html" class="bg-black text-white px-10 py-5 rounded-none text-sm font-bold uppercase tracking-widest hover:bg-zinc-800 transition-all text-center">50+ Courses</a>
+                    <a href="courses.html" class="bg-yellow-400 text-black px-10 py-5 rounded-none text-sm font-bold uppercase tracking-widest hover:bg-yellow-500 transition-all text-center">See How it Works</a>
+                </div>
+            </div>
+            <div class="relative">
+                <div class="absolute inset-0 bg-yellow-400/10 rounded-[2rem] -rotate-3 -z-10"></div>
+                <div class="absolute -top-6 -right-6 w-32 h-32 bg-yellow-400 rounded-full mix-blend-multiply filter blur-2xl opacity-30 animate-pulse"></div>
+                <div class="absolute -bottom-6 -left-6 w-32 h-32 bg-blue-400 rounded-full mix-blend-multiply filter blur-2xl opacity-20"></div>
+                <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&q=80&w=1200" 
+                     alt="Learning at Sabicrest" 
+                     class="rounded-[2rem] shadow-2xl object-cover h-[500px] w-full transform rotate-2">
+            </div>
+        </div>
+    </header>
+
+    <!-- Bento Grid Section -->
+    <section class="container-wide py-20">
+        <h2 class="mixed-title mb-12">
+            Why Sabicrest <span>is different.</span>
+        </h2>
+        
+        <div class="grid grid-cols-1 md:grid-cols-4 md:grid-rows-2 gap-4 lg:gap-6 md:h-[650px]">
+            <!-- Large Card -->
+            <div class="md:col-span-2 md:row-span-2 bento-card p-8 lg:p-12 flex flex-col justify-between bg-gradient-to-br from-yellow-50/80 to-white backdrop-blur-sm relative overflow-hidden group border-yellow-100/50">
+                <div class="absolute top-6 right-6 w-10 h-10 rounded-full bg-white/50 backdrop-blur-md border border-yellow-200/50 flex items-center justify-center group-hover:bg-yellow-400 transition-all duration-500 shadow-sm">
+                    <svg class="w-5 h-5 text-zinc-900" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path></svg>
+                </div>
+                <div class="relative z-10">
+                    <div class="flex items-center gap-2 mb-6">
+                        <span class="relative flex h-2 w-2">
+                            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span>
+                            <span class="relative inline-flex rounded-full h-2 w-2 bg-red-500"></span>
+                        </span>
+                        <span class="text-[10px] font-black uppercase tracking-[0.2em] text-red-500">Live Now</span>
+                    </div>
+                    <h3 class="mb-4 leading-[1.1]">Real-time <br>Live Learning.</h3>
+                    <p class="text-zinc-500 max-w-xs text-base lg:text-lg font-medium leading-snug">No pre-recorded fluff. Interact directly with industry leaders in scheduled sessions.</p>
+                </div>
+            </div>
+
+            <!-- In Person Card -->
+            <div class="md:col-span-2 bento-card p-8 lg:p-10 bg-zinc-950 text-white flex items-center justify-between group relative overflow-hidden">
+                <div class="relative z-10">
+                    <h3 class="mb-3 text-white uppercase italic text-2xl lg:text-3xl">In-Person Hubs</h3>
+                    <p class="text-zinc-400 text-base lg:text-lg font-medium">Join our physical campuses in major cities.</p>
+                </div>
+                <div class="relative z-10 w-20 h-20 lg:w-24 lg:h-24 bg-yellow-400 rounded-full flex items-center justify-center text-black font-black text-[10px] tracking-widest rotate-12 group-hover:rotate-0 transition-all duration-500 shadow-[0_0_30px_rgba(250,204,21,0.3)]">
+                    NEW
+                </div>
+                <div class="absolute inset-0 bg-[radial-gradient(circle_at_50%_120%,rgba(250,204,21,0.15),transparent)]"></div>
+            </div>
+
+            <!-- Stats Card -->
+            <div class="md:col-span-1 bento-card p-6 lg:p-8 flex flex-col justify-center items-center text-center bg-white border-zinc-100 hover:border-yellow-200">
+                <div class="absolute top-4 right-4 text-zinc-200 group-hover:text-yellow-400 transition-colors">
+                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M13 3l-1-1-1 1-7 7-1 1 1 1 7 7 1 1 1-1 7-7 1-1-1-1-7-7z"></path></svg>
+                </div>
+                <span class="text-5xl lg:text-7xl font-black text-zinc-900 tracking-tighter italic">94%</span>
+                <p class="text-[10px] text-zinc-400 mt-4 uppercase font-black tracking-[0.2em]">Hiring Rate</p>
+            </div>
+
+            <!-- Support Card -->
+            <div class="md:col-span-1 bento-card p-6 lg:p-8 bg-zinc-900 text-white flex flex-col justify-center items-center text-center group border-zinc-800">
+                <p class="text-base lg:text-lg leading-tight font-bold italic mb-4">Personal<br>Mentorship</p>
+                <div class="flex -space-x-3 group-hover:-space-x-1 transition-all duration-500">
+                    <img class="w-10 h-10 rounded-full border-2 border-zinc-900 object-cover" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=100" alt="Avatar">
+                    <img class="w-10 h-10 rounded-full border-2 border-zinc-900 object-cover" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=80&w=100" alt="Avatar">
+                    <div class="w-10 h-10 rounded-full border-2 border-zinc-900 bg-yellow-400 text-black flex items-center justify-center text-[10px] font-black">+</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Course Grid -->
+    <section class="bg-white py-20">
+        <div class="container-wide">
+            <div class="flex justify-between items-end mb-12">
+                <h2 class="mixed-title">
+                    Marketable <span>Skills.</span>
+                </h2>
+                <a href="courses.html" class="text-sm font-bold uppercase tracking-widest text-black border-b-2 border-yellow-400 pb-1 hover:text-yellow-600 transition-colors">View all 50+ courses</a>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Course Item -->
+                <div class="group cursor-pointer" data-id="1">
+                    <div class="absolute top-4 right-4 z-20 w-10 h-10 rounded-full bg-white/90 backdrop-blur-sm border border-zinc-200 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 shadow-xl">
+                        <svg class="w-5 h-5 text-zinc-900" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path></svg>
+                    </div>
+                    <div class="aspect-video rounded-[2rem] overflow-hidden mb-5 bg-gray-100 border border-gray-100">
+                        <img src="https://images.unsplash.com/photo-1586717791821-3f44a563eb4c?auto=format&fit=crop&q=80&w=800" 
+                             class="w-full h-full object-cover group-hover:scale-105 transition duration-500" alt="UI Design">
+                    </div>
+                    <div class="flex justify-between items-start">
+                        <div>
+                            <h4 class="text-xl font-bold group-hover:text-yellow-600 transition-colors">Advanced Visual Design</h4>
+                            <p class="text-gray-500 text-sm mt-1 uppercase tracking-widest font-bold text-[10px]">Live Course • 8 Weeks</p>
+                        </div>
+                        <span class="bg-gray-100 px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-tighter">Trending</span>
+                    </div>
+                </div>
+                <!-- Course Item -->
+                <div class="group cursor-pointer" data-id="2">
+                    <div class="aspect-video rounded-[2rem] overflow-hidden mb-5 bg-gray-100 border border-gray-100">
+                        <img src="https://images.unsplash.com/photo-1551288049-bbbda536339a?auto=format&fit=crop&q=80&w=800" 
+                             class="w-full h-full object-cover group-hover:scale-105 transition duration-500" alt="Data Science">
+                    </div>
+                    <h4 class="text-xl font-bold group-hover:text-yellow-600 transition-colors">Data Science Strategy</h4>
+                    <p class="text-gray-500 text-sm mt-1 uppercase tracking-widest font-bold text-[10px]">Hybrid • 12 Weeks</p>
+                </div>
+                <!-- Course Item -->
+                <div class="group cursor-pointer" data-id="3">
+                    <div class="aspect-video rounded-3xl overflow-hidden mb-4">
+                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=800" 
+                             class="w-full h-full object-cover group-hover:scale-105 transition duration-500" alt="Growth">
+                    </div>
+                    <h4 class="text-xl font-bold group-hover:text-yellow-600 transition-colors">Growth Marketing Live</h4>
+                    <p class="text-gray-500 text-sm mt-1 uppercase tracking-widest font-bold text-[10px]">Online • 6 Weeks</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 1: The Learning Journey -->
+    <section class="container-wide py-20 border-t border-zinc-100">
+        <h2 class="mixed-title mb-16 text-center md:text-left">
+            Your Path <span>to Mastery.</span>
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+            <div class="space-y-4">
+                <div class="w-12 h-12 bg-yellow-400 rounded-2xl flex items-center justify-center font-black text-xl">01</div>
+                <h3 class="text-2xl font-bold italic">Curated Enrollment</h3>
+                <p class="text-zinc-500 leading-relaxed">Select your track and join a cohort of high-performing peers. Our onboarding ensures you have every tool ready before Day 1.</p>
+            </div>
+            <div class="space-y-4">
+                <div class="w-12 h-12 bg-zinc-900 text-white rounded-2xl flex items-center justify-center font-black text-xl">02</div>
+                <h3 class="text-2xl font-bold italic">Live Immersion</h3>
+                <p class="text-zinc-500 leading-relaxed">No static videos. Engage in real-time problem solving, live critiques, and breakout rooms led by industry veterans.</p>
+            </div>
+            <div class="space-y-4">
+                <div class="w-12 h-12 bg-yellow-400 rounded-2xl flex items-center justify-center font-black text-xl">03</div>
+                <h3 class="text-2xl font-bold italic">Global Placement</h3>
+                <p class="text-zinc-500 leading-relaxed">Graduate with a portfolio that speaks for itself. Access our exclusive internship network and 1-on-1 career coaching.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 2: Global Mentorship -->
+    <section class="bg-zinc-950 py-24 text-white overflow-hidden">
+        <div class="container-wide">
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <div>
+                    <h2 class="mixed-title text-white mb-8">
+                        Learn from <span>the best.</span>
+                    </h2>
+                    <p class="text-zinc-400 text-lg mb-12 max-w-md">Our mentors don't just teach—they lead departments at the world's most innovative companies. Get insights you won't find in any textbook.</p>
+                    <div class="grid grid-cols-2 gap-8">
+                        <div>
+                            <p class="text-4xl font-bold text-yellow-400 mb-1">120+</p>
+                            <p class="text-xs uppercase tracking-widest font-bold text-zinc-500">Active Mentors</p>
+                        </div>
+                        <div>
+                            <p class="text-4xl font-bold text-yellow-400 mb-1">15+</p>
+                            <p class="text-xs uppercase tracking-widest font-bold text-zinc-500">Countries</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="grid grid-cols-2 gap-4">
+                    <div class="bento-card bg-zinc-900 border-zinc-800 p-6 flex flex-col items-center text-center">
+                        <div class="w-20 h-20 rounded-full bg-zinc-800 mb-4 overflow-hidden border-2 border-yellow-400/20">
+                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=200" alt="Mentor" class="w-full h-full object-cover">
+                        </div>
+                        <h4 class="font-bold">Sarah Chen</h4>
+                        <p class="text-[10px] text-zinc-500 uppercase font-black">Design Lead, Meta</p>
+                    </div>
+                    <div class="bento-card bg-zinc-900 border-zinc-800 p-6 translate-y-8 flex flex-col items-center text-center">
+                        <div class="w-20 h-20 rounded-full bg-zinc-800 mb-4 overflow-hidden border-2 border-yellow-400/20">
+                            <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&q=80&w=200" alt="Mentor" class="w-full h-full object-cover">
+                        </div>
+                        <h4 class="font-bold">David Okoro</h4>
+                        <p class="text-[10px] text-zinc-500 uppercase font-black">CTO, FinTech Hub</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 3: Hiring Partners & Outcomes -->
+    <section class="container-wide py-20">
+        <div class="text-center max-w-3xl mx-auto mb-16">
+            <h2 class="mixed-title mb-6 text-center">Hired by <span>the Giants.</span></h2>
+            <p class="text-zinc-500">Our graduates are currently building the future at over 200+ global organizations.</p>
+        </div>
+        <div class="flex flex-wrap justify-center items-center gap-12 grayscale opacity-40 hover:grayscale-0 hover:opacity-100 transition-all duration-700">
+            <span class="text-2xl font-black tracking-tighter italic">GOOGLE</span>
+            <span class="text-2xl font-black tracking-tighter italic">STRIPE</span>
+            <span class="text-2xl font-black tracking-tighter italic">PAYSTACK</span>
+            <span class="text-2xl font-black tracking-tighter italic">MICROSOFT</span>
+            <span class="text-2xl font-black tracking-tighter italic">FLUTTERWAVE</span>
+            <span class="text-2xl font-black tracking-tighter italic">AMAZON</span>
+        </div>
+    </section>
+
+    <!-- Section 4: Frequently Asked Questions -->
+    <section class="container-wide py-20 border-t border-zinc-100">
+        <div class="grid lg:grid-cols-3 gap-16">
+            <div>
+                <h2 class="mixed-title mb-6">FAQs.</h2>
+                <p class="text-zinc-500">Everything you need to know about the platform and our methodology.</p>
+            </div>
+            <div class="lg:col-span-2 max-h-[600px] overflow-y-auto pr-4 custom-scrollbar">
+                <div class="grid md:grid-cols-2 gap-6">
+                <div class="p-8 bg-zinc-50 rounded-[2rem] border border-zinc-100">
+                    <h4 class="font-bold text-lg mb-3 italic">Are the sessions recorded?</h4>
+                    <p class="text-sm text-zinc-500 leading-relaxed">Yes, all live sessions are recorded and made available in your dashboard within 2 hours, though live attendance is highly recommended for the best experience.</p>
+                </div>
+                <div class="p-8 bg-zinc-50 rounded-[2rem] border border-zinc-100">
+                    <h4 class="font-bold text-lg mb-3 italic">Do I get a certificate?</h4>
+                    <p class="text-sm text-zinc-500 leading-relaxed">Upon successful completion of projects and the final capstone, you will receive a verified industry-standard certificate shareable on LinkedIn.</p>
+                </div>
+                <div class="p-8 bg-zinc-50 rounded-[2rem] border border-zinc-100">
+                    <h4 class="font-bold text-lg mb-3 italic">What is the weekly commitment?</h4>
+                    <p class="text-sm text-zinc-500 leading-relaxed">Typically, students spend 6-8 hours a week: 4 hours of live instruction and 2-4 hours on hands-on project work.</p>
+                </div>
+                <div class="p-8 bg-zinc-50 rounded-[2rem] border border-zinc-100">
+                    <h4 class="font-bold text-lg mb-3 italic">Is there a refund policy?</h4>
+                    <p class="text-sm text-zinc-500 leading-relaxed">We offer a 100% money-back guarantee within the first week of the cohort if you feel the course isn't the right fit for you.</p>
+                </div>
+                    <div class="p-8 bg-zinc-50 rounded-[2rem] border border-zinc-100">
+                        <h4 class="font-bold text-lg mb-3 italic">Do I need a high-end laptop?</h4>
+                        <p class="text-sm text-zinc-500 leading-relaxed">Most courses only require a stable internet connection and a mid-range laptop (i5 processor, 8GB RAM). Specific tech tracks like Engineering will have detailed requirements sent after enrollment.</p>
+                    </div>
+                    <div class="p-8 bg-zinc-50 rounded-[2rem] border border-zinc-100">
+                        <h4 class="font-bold text-lg mb-3 italic">Is there a community for alumni?</h4>
+                        <p class="text-sm text-zinc-500 leading-relaxed">Absolutely. Once you graduate, you gain lifetime access to our exclusive Slack community, where we share global job openings and hold monthly networking events.</p>
+                    </div>
+                    <div class="p-8 bg-zinc-50 rounded-[2rem] border border-zinc-100">
+                        <h4 class="font-bold text-lg mb-3 italic">What are the prerequisites?</h4>
+                        <p class="text-sm text-zinc-500 leading-relaxed">Our tracks range from Beginner to Advanced. Each course page details specific skills needed, but most of our "101" masterclasses require zero prior experience.</p>
+                    </div>
+                    <div class="p-8 bg-zinc-50 rounded-[2rem] border border-zinc-100">
+                        <h4 class="font-bold text-lg mb-3 italic">Are there group discounts?</h4>
+                        <p class="text-sm text-zinc-500 leading-relaxed">Yes! For teams of 5 or more, we offer custom pricing. Please visit our "For Teams" page or contact our support team for a tailored quote.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-50 py-16">
+        <div class="container-wide grid grid-cols-2 md:grid-cols-4 gap-12">
+            <div class="col-span-2">
+                <div class="text-2xl font-extrabold tracking-tighter italic mb-6">SABICREST</div>
+                <p class="text-gray-500 max-w-xs leading-tight">Empowering the next generation of professionals through immersive, live education.</p>
+            </div>
+            <div>
+                <h5 class="font-bold mb-4">Navigation</h5>
+                <ul class="text-sm space-y-2 text-gray-600">
+                    <li><a href="index.html" class="hover:text-yellow-500 transition">Home</a></li>
+                    <li><a href="courses.html" class="hover:text-yellow-500 transition">Courses</a></li>
+                    <li><a href="about.html" class="hover:text-yellow-500 transition">About</a></li>
+                    <li><a href="blog.html" class="hover:text-yellow-500 transition">Blog</a></li>
+                    <li><a href="#" class="hover:text-yellow-500 transition">Live Online</a></li>
+                    <li><a href="#" class="hover:text-yellow-500 transition">For Teams</a></li>
+                </ul>
+            </div>
+            <div>
+                <h5 class="font-bold mb-4">Company</h5>
+                <ul class="text-sm space-y-2 text-gray-600">
+                    <li>About Us</li>
+                    <li>Careers</li>
+                    <li>Contact</li>
+                </ul>
+            </div>
+        </div>
+        <div class="container-wide mt-12 pt-8 border-t border-gray-200 text-xs text-gray-400">
+            © 2024 Sabicrest Learning Inc. All rights reserved.
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>

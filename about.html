@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About | Sabicrest Story</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="antialiased">
+
+    <!-- Navigation -->
+    <nav class="sticky top-0 z-50 bg-white/70 backdrop-blur-xl border-b border-gray-100/50">
+        <div class="container-wide py-4 flex justify-between items-center">
+            <a href="index.html" class="text-2xl font-extrabold tracking-tighter italic hover:opacity-80 transition-opacity cursor-pointer">SABICREST</a>
+            <div class="hidden md:flex space-x-8 text-sm font-medium">
+                <a href="index.html" class="hover:text-yellow-500 transition">Home</a>
+                <a href="courses.html" class="hover:text-yellow-500 transition">Courses</a>
+                <a href="about.html" class="text-yellow-600">About</a>
+                <a href="blog.html" class="hover:text-yellow-500 transition">Blog</a>
+                <a href="#" class="hover:text-yellow-500 transition">Live Online</a>
+                <a href="#" class="hover:text-yellow-500 transition">For Teams</a>
+            </div>
+            <div class="flex items-center gap-1 md:gap-4">
+                <button id="enroll-btn" class="bg-yellow-400 text-black px-4 py-2 md:px-7 md:py-3 rounded-full font-bold text-[10px] md:text-xs uppercase tracking-widest hover:bg-yellow-500 hover:shadow-lg hover:shadow-yellow-400/20 transition-all active:scale-95">
+                    Enroll
+                </button>
+                <button id="mobile-menu-btn" class="md:hidden pr-0 pl-1 py-2 text-zinc-900 focus:outline-none">
+                    <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path id="menu-icon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="md:hidden">
+            <div class="flex flex-col h-full justify-between">
+                <div class="flex flex-col space-y-4">
+                    <a href="index.html" class="mobile-nav-link text-zinc-400">Home</a>
+                    <a href="courses.html" class="mobile-nav-link text-zinc-400">Courses</a>
+                    <a href="about.html" class="mobile-nav-link text-zinc-900">About</a>
+                    <a href="blog.html" class="mobile-nav-link text-zinc-400">Blog</a>
+                    <a href="#" class="mobile-nav-link text-zinc-400">Live Online</a>
+                    <a href="#" class="mobile-nav-link text-zinc-400">For Teams</a>
+                </div>
+                
+                <div class="border-t border-zinc-100 pt-8 pb-12">
+                    <p class="text-[10px] font-black uppercase tracking-[0.2em] text-zinc-400 mb-6">Our Location</p>
+                    <p class="text-zinc-900 font-bold mb-8 italic text-lg">Lagos • London • Remote</p>
+                    <div class="flex gap-6">
+                        <a href="#" class="text-zinc-400 hover:text-zinc-900 transition-colors">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/></svg>
+                        </a>
+                        <a href="#" class="text-zinc-400 hover:text-zinc-900 transition-colors">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="container-wide pt-10 pb-24 md:py-24">
+        <div class="max-w-4xl">
+            <p class="text-yellow-600 font-bold uppercase text-[10px] tracking-[0.3em] mb-4">Established May 2026</p>
+            <h1 class="mixed-title mb-8">Redefining Education <span>for the Modern World.</span></h1>
+            <p class="text-xl text-zinc-500 leading-relaxed font-medium mb-6 md:mb-10">Sabicrest was born out of a simple frustration: the digital skills gap in Africa was widening, and traditional "static" online courses weren't fixing it. We launched in May 2026 to bring Silicon Valley standards to Lagos and beyond.</p>
+            <div class="flex flex-wrap gap-3 md:gap-6">
+                <a href="courses.html" class="bg-yellow-400 text-black px-10 py-5 rounded-none text-sm font-bold uppercase tracking-widest hover:bg-yellow-500 transition-all">Explore Curriculum</a>
+                <a href="#contact-form" class="bg-black text-white px-10 py-5 rounded-none text-sm font-bold uppercase tracking-widest hover:bg-zinc-800 transition-all">Contact Us</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Core Values -->
+    <section class="container-wide py-20 border-t border-zinc-100">
+        <div class="grid lg:grid-cols-3 gap-12">
+            <div class="lg:col-span-1">
+                <h2 class="mixed-title">Our <span>DNA.</span></h2>
+                <p class="text-zinc-500 mt-6">These aren't just words on a wall. They are the principles that dictate every cohort we launch.</p>
+            </div>
+            <div class="lg:col-span-2 grid md:grid-cols-2 gap-6">
+                <div class="p-8 border border-zinc-100 rounded-3xl">
+                    <div class="w-10 h-10 bg-zinc-900 text-white rounded-xl flex items-center justify-center mb-6 font-bold">01</div>
+                    <h4 class="text-xl font-bold mb-3 italic tracking-tight">Radical Accessibility</h4>
+                    <p class="text-zinc-500 text-sm leading-relaxed">We localized our pricing because we believe high-end tech education shouldn't be a privilege of the elite.</p>
+                </div>
+                <div class="p-8 border border-zinc-100 rounded-3xl">
+                    <div class="w-10 h-10 bg-yellow-400 text-black rounded-xl flex items-center justify-center mb-6 font-bold">02</div>
+                    <h4 class="text-xl font-bold mb-3 italic tracking-tight">Outcome Obsession</h4>
+                    <p class="text-zinc-500 text-sm leading-relaxed">We don't measure success by students enrolled, but by students hired at global organizations.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- The Methodology Section -->
+    <section class="bg-zinc-50 py-24">
+        <div class="container-wide">
+            <div class="max-w-3xl mb-16">
+                <h2 class="mixed-title">The "Sabi" <span>Methodology.</span></h2>
+                <p class="text-zinc-500 mt-4 text-lg">Beyond the video player. We built a system that mimics a real-world high-performance work environment.</p>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-white p-8 rounded-[2.5rem] border border-zinc-200">
+                    <h4 class="font-bold text-xl mb-4 italic underline decoration-yellow-400 underline-offset-4">Cohort Accountability</h4>
+                    <p class="text-zinc-500 text-sm leading-relaxed">You learn in tightly-knit squads. Peer-to-peer accountability ensures you never fall behind, maintaining our 90%+ completion rate.</p>
+                </div>
+                <div class="bg-white p-8 rounded-[2.5rem] border border-zinc-200">
+                    <h4 class="font-bold text-xl mb-4 italic underline decoration-yellow-400 underline-offset-4">Project-First Curriculum</h4>
+                    <p class="text-zinc-500 text-sm leading-relaxed">Theory is for textbooks. At Sabicrest, 70% of your time is spent building production-ready assets for your portfolio.</p>
+                </div>
+                <div class="bg-white p-8 rounded-[2.5rem] border border-zinc-200">
+                    <h4 class="font-bold text-xl mb-4 italic underline decoration-yellow-400 underline-offset-4">Direct Industry Line</h4>
+                    <p class="text-zinc-500 text-sm leading-relaxed">Our mentors are active leads at Google, Meta, and Paystack. They provide the "unwritten rules" of the industry.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- The Problem & Solution -->
+    <section class="container-wide py-20 border-t border-zinc-100">
+        <h2 class="mixed-title mb-16">The <span>Problem.</span></h2>
+        <div class="grid md:grid-cols-2 gap-8">
+            <div class="bento-card p-10 bg-zinc-50 border-zinc-100">
+                <h3 class="text-2xl italic mb-4">The "Zombie" Learning Crisis</h3>
+                <p class="text-zinc-500 leading-relaxed">Most platforms boast 5% completion rates. Why? Because pre-recorded videos are lonely, outdated, and lack accountability. Students in Nigeria often face FX barriers and curricula that don't reflect the local market realities.</p>
+            </div>
+            <div class="bento-card p-10 bg-yellow-400 text-black border-yellow-500">
+                <h3 class="text-2xl italic mb-4">The Sabicrest Solution</h3>
+                <p class="font-medium leading-relaxed">We solved this by making learning 100% Live. No "Zombies" here. We localized pricing to Naira to remove FX volatility and built a direct pipeline from our classrooms to top-tier global internships.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section class="container-wide py-20">
+        <h2 class="mixed-title mb-16">The <span>Founders.</span></h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div class="group">
+                <div class="aspect-[4/5] bg-zinc-100 rounded-[2.5rem] overflow-hidden mb-6 relative">
+                    <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&q=80&w=400" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" alt="Founder">
+                </div>
+                <h4 class="text-xl font-bold">Chidi Nwosu</h4>
+                <p class="text-xs uppercase font-black text-zinc-400 tracking-widest mt-1 italic">Chief Executive Officer</p>
+            </div>
+            <div class="group">
+                <div class="aspect-[4/5] bg-zinc-100 rounded-[2.5rem] overflow-hidden mb-6 relative">
+                    <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=400" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" alt="Founder">
+                </div>
+                <h4 class="text-xl font-bold">Amara Bello</h4>
+                <p class="text-xs uppercase font-black text-zinc-400 tracking-widest mt-1 italic">Head of Curriculum</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="container-wide py-20 border-t border-zinc-100">
+        <div class="bento-card bg-zinc-950 p-8 md:p-16 relative overflow-hidden group">
+            <!-- Glassmorphism Card -->
+            <div class="relative z-10 grid lg:grid-cols-2 gap-16 items-center">
+                <div>
+                    <h2 class="mixed-title text-white mb-6">Let's <span>Talk.</span></h2>
+                    <p class="text-zinc-400 text-lg mb-10">Ready to transform your career? Connect with our team across any platform.</p>
+                    
+                    <div class="grid sm:grid-cols-2 gap-4">
+                        <a href="mailto:hello@sabicrest.com" class="bg-white/5 backdrop-blur-md border border-white/10 p-6 rounded-3xl hover:bg-white/10 transition-all group/link">
+                            <p class="text-[10px] font-black uppercase tracking-widest text-yellow-400 mb-2">Email Us</p>
+                            <p class="text-white font-bold group-hover/link:translate-x-1 transition-transform">hello@sabicrest.com</p>
+                        </a>
+                        <a href="https://wa.me/2349027231243" target="_blank" class="bg-white/5 backdrop-blur-md border border-white/10 p-6 rounded-3xl hover:bg-white/10 transition-all group/link">
+                            <p class="text-[10px] font-black uppercase tracking-widest text-green-400 mb-2">WhatsApp</p>
+                            <p class="text-white font-bold group-hover/link:translate-x-1 transition-transform">+234 902 723 1243</p>
+                        </a>
+                    </div>
+
+                    <div class="mt-12">
+                        <p class="text-[10px] font-black uppercase tracking-widest text-zinc-500 mb-6">Social Ecosystem</p>
+                        <div class="flex flex-wrap gap-4">
+                            <a href="#" class="w-12 h-12 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center text-white hover:bg-yellow-400 hover:text-black transition-all">LD</a>
+                            <a href="#" class="w-12 h-12 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center text-white hover:bg-yellow-400 hover:text-black transition-all">IG</a>
+                            <a href="#" class="w-12 h-12 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center text-white hover:bg-yellow-400 hover:text-black transition-all">FB</a>
+                            <a href="#" class="w-12 h-12 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center text-white hover:bg-indigo-500 hover:text-white transition-all">DC</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white/[0.03] backdrop-blur-2xl border border-white/10 p-8 md:p-10 rounded-[2.5rem]">
+                    <form id="contact-form" class="space-y-6">
+                        <div>
+                            <label class="block text-[10px] font-black uppercase tracking-widest text-zinc-500 mb-2">Full Name</label>
+                            <input type="text" class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white outline-none focus:border-yellow-400 transition-colors" placeholder="John Doe">
+                        </div>
+                        <div>
+                            <label class="block text-[10px] font-black uppercase tracking-widest text-zinc-500 mb-2">Email Address</label>
+                            <input type="email" class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white outline-none focus:border-yellow-400 transition-colors" placeholder="john@example.com">
+                        </div>
+                        <div>
+                            <label class="block text-[10px] font-black uppercase tracking-widest text-zinc-500 mb-2">How can we help?</label>
+                            <textarea rows="4" class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white outline-none focus:border-yellow-400 transition-colors" placeholder="Tell us about your goals..."></textarea>
+                        </div>
+                        <button type="button" id="submit-contact" class="w-full bg-yellow-400 text-black font-black py-4 rounded-xl hover:bg-yellow-500 transition-all uppercase tracking-widest text-xs disabled:opacity-50 disabled:cursor-not-allowed">Send Message</button>
+                    </form>
+                </div>
+            </div>
+            <!-- Abstract Background Element -->
+            <div class="absolute -bottom-24 -right-24 w-96 h-96 bg-yellow-400/10 rounded-full blur-[120px]"></div>
+        </div>
+    </section>
+
+    <!-- Roadmap Section -->
+    <section class="container-wide py-20 border-t border-zinc-100">
+        <h2 class="mixed-title mb-16 text-center">Our <span>Roadmap.</span></h2>
+        <div class="max-w-3xl mx-auto space-y-12">
+            <div class="flex gap-8 items-start">
+                <div class="text-yellow-500 font-black text-xl italic pt-1">Q3 2026</div>
+                <div>
+                    <h4 class="text-xl font-bold mb-2 uppercase italic tracking-tighter">Physical Hubs Launch</h4>
+                    <p class="text-zinc-500">Opening our first three in-person learning labs in Lagos, Abuja, and Port Harcourt to foster community and focus.</p>
+                </div>
+            </div>
+            <div class="flex gap-8 items-start">
+                <div class="text-zinc-300 font-black text-xl italic pt-1">Q1 2027</div>
+                <div>
+                    <h4 class="text-xl font-bold mb-2 uppercase italic tracking-tighter">AI Learning Assistant</h4>
+                    <p class="text-zinc-500">Integrating "Sabi-AI" into our student dashboard to provide 24/7 personalized project feedback based on live lecture data.</p>
+                </div>
+            </div>
+            <div class="flex gap-8 items-start">
+                <div class="text-zinc-300 font-black text-xl italic pt-1">2028</div>
+                <div>
+                    <h4 class="text-xl font-bold mb-2 uppercase italic tracking-tighter">Global Expansion</h4>
+                    <p class="text-zinc-500">Scaling our live-learning model to emerging markets in Southeast Asia and South America.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="container-wide py-20 border-t border-zinc-100">
+        <h2 class="mixed-title mb-16 text-center">Get in <span>Touch.</span></h2>
+        <div class="grid lg:grid-cols-2 gap-8 lg:gap-12">
+            <!-- Direct Contact & Socials Card -->
+            <div class="bento-card p-8 lg:p-10 bg-gradient-to-br from-white/70 to-white/50 backdrop-blur-md border border-zinc-100 shadow-lg flex flex-col justify-between">
+                <div>
+                    <h3 class="mb-6">Connect with <span>Us.</span></h3>
+                    <p class="text-zinc-600 leading-relaxed mb-8">Have questions or ready to enroll? Reach out directly, we're here to help.</p>
+                    <div class="space-y-6 mb-10">
+                        <a href="mailto:hello@sabicrest.com" class="flex items-center gap-4 text-zinc-800 hover:text-yellow-600 transition-colors group">
+                            <div class="w-12 h-12 bg-yellow-400/20 rounded-full flex items-center justify-center group-hover:bg-yellow-400 transition-colors duration-300">
+                                <svg class="w-6 h-6 text-zinc-900" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8m-1 10a2 2 0 01-2 2H6a2 2 0 01-2-2V6a2 2 0 012-2h12a2 2 0 012 2v12z"></path></svg>
+                            </div>
+                            <span class="text-lg font-medium">hello@sabicrest.com</span>
+                        </a>
+                        <a href="https://wa.me/2349027231243" target="_blank" class="flex items-center gap-4 text-zinc-800 hover:text-yellow-600 transition-colors group">
+                            <div class="w-12 h-12 bg-yellow-400/20 rounded-full flex items-center justify-center group-hover:bg-yellow-400 transition-colors duration-300">
+                                <svg class="w-6 h-6 text-zinc-900" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12.04 2C7.34 2 3.53 5.81 3.53 10.5C3.53 12.11 4 13.62 4.88 14.94L3.29 20.71L9.12 19.12C10.44 19.99 11.95 20.47 13.56 20.47L13.56 20.47C18.26 20.47 22.07 16.66 22.07 11.96C22.07 7.26 18.26 3.45 13.56 3.45C12.04 3.45 10.53 3.84 9.21 4.61L9.21 4.61L9.21 4.61C7.89 5.38 6.78 6.49 6.01 7.81L6.01 7.81L6.01 7.81C5.24 9.13 4.85 10.64 4.85 12.16C4.85 16.86 8.66 20.67 13.36 20.67H13.56C16.83 20.67 19.66 18.57 20.91 15.5L20.91 15.5L20.91 15.5C21.68 13.75 22.07 11.75 22.07 9.75C22.07 5.05 18.26 1.24 13.56 1.24C12.04 1.24 10.53 1.63 9.21 2.4L9.21 2.4L9.21 2.4C7.89 3.17 6.78 4.28 6.01 5.6L6.01 5.6L6.01 5.6C5.24 6.92 4.85 8.43 4.85 9.95C4.85 14.65 8.66 18.46 13.36 18.46H13.56C16.83 18.46 19.66 16.36 20.91 13.3L20.91 13.3L20.91 13.3C21.68 11.55 22.07 9.55 22.07 7.55C22.07 2.85 18.26 -0.96 13.56 -0.96C12.04 -0.96 10.53 -0.57 9.21 0.2L9.21 0.2L9.21 0.2C7.89 0.97 6.78 2.08 6.01 3.4L6.01 3.4L6.01 3.4C5.24 4.72 4.85 6.23 4.85 7.75C4.85 12.45 8.66 16.26 13.36 16.26H13.56C16.83 16.26 19.66 14.16 20.91 11.1L20.91 11.1L20.91 11.1C21.68 9.35 22.07 7.35 22.07 5.35C22.07 0.65 18.26 -3.16 13.56 -3.16C12.04 -3.16 10.53 -2.77 9.21 -2L9.21 -2L9.21 -2C7.89 -1.23 6.78 -0.12 6.01 1.19L6.01 1.19L6.01 1.19C5.24 2.51 4.85 4.02 4.85 5.54C4.85 10.24 8.66 14.05 13.36 14.05H13.56C16.83 14.05 19.66 11.95 20.91 8.9L20.91 8.9L20.91 8.9C21.68 7.15 22.07 5.15 22.07 3.15C22.07 -1.55 18.26 -5.36 13.56 -5.36C12.04 -5.36 10.53 -4.97 9.21 -4.2L9.21 -4.2L9.21 -4.2C7.89 -3.43 6.78 -2.32 6.01 -1L6.01 -1L6.01 -1C5.24 0.32 4.85 1.83 4.85 3.35C4.85 8.05 8.66 11.86 13.36 11.86H13.56C16.83 11.86 1
+    <!-- Footer -->
+    <footer class="bg-gray-50 py-16">
+        <div class="container-wide grid grid-cols-2 md:grid-cols-4 gap-12">
+            <div class="col-span-2">
+                <div class="text-2xl font-extrabold tracking-tighter italic mb-6">SABICREST</div>
+                <p class="text-gray-500 max-w-xs leading-tight">Empowering the next generation of professionals through immersive, live education.</p>
+            </div>
+            <div>
+                <h5 class="font-bold mb-4">Navigation</h5>
+                <ul class="text-sm space-y-2 text-gray-600">
+                    <li><a href="index.html" class="hover:text-yellow-500 transition">Home</a></li>
+                    <li><a href="courses.html" class="hover:text-yellow-500 transition">Courses</a></li>
+                    <li><a href="about.html" class="hover:text-yellow-500 transition">About</a></li>
+                    <li><a href="blog.html" class="hover:text-yellow-500 transition">Blog</a></li>
+                    <li><a href="#" class="hover:text-yellow-500 transition">Live Online</a></li>
+                    <li><a href="#" class="hover:text-yellow-500 transition">For Teams</a></li>
+                </ul>
+            </div>
+            <div>
+                <h5 class="font-bold mb-4">Company</h5>
+                <ul class="text-sm space-y-2 text-gray-600">
+                    <li>About Us</li>
+                    <li>Careers</li>
+                    <li>Contact</li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>
