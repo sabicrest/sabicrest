@@ -17,8 +17,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const EXCHANGE_RATE = 1600; // 1 USD = 1600 NGN (Market placeholder)
 
     // Generate 50 sample courses
-    const categories = ['Design', 'Engineering', 'Marketing', 'Product', 'Finance', 'Data Science'];
-    const toolsList = ['Figma', 'VS Code', 'Python', 'Jira', 'Tableau', 'Slack', 'React'];
+    const categories = ['Design', 'Videography', 'Engineering', 'Marketing', 'Product', 'Finance', 'Data Science'];
+    const toolsList = ['Figma', 'VS Code', 'Python', 'Jira', 'Tableau', 'Slack', 'React', 'Premiere Pro', 'DaVinci Resolve', 'After Effects'];
     const courses = Array.from({ length: 50 }, (_, i) => {
         const title = [
             'Product Strategy Masterclass',
@@ -26,8 +26,11 @@ document.addEventListener('DOMContentLoaded', () => {
             'Fullstack Development',
             'Quantitative Finance',
             'AI Prompt Engineering',
-            'Brand Architecture'
-        ][i % 6];
+            'Brand Architecture',
+            'Cinematography & Lighting',
+            'Commercial Video Editing',
+            'Documentary Storytelling'
+        ][i % 9];
         
         return {
         id: i + 1,
@@ -272,30 +275,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 // Simulate network request
                 setTimeout(() => {
                     showToast('Message sent! We\'ll get back to you shortly.');
-                    contactForm.reset();
                     submitContactBtn.innerText = originalText;
                     submitContactBtn.disabled = false;
-                }, 1500);
-            } else {
-                showToast('Please fill in all fields before sending.');
+                    contactForm.reset();
+                }, 2000);
             }
         });
     }
-
-    function showToast(message) {
-        let toast = document.getElementById('toast-notif');
-        if (!toast) {
-            toast = document.createElement('div');
-            toast.id = 'toast-notif';
-            toast.className = 'toast-notification';
-            document.body.appendChild(toast);
-        }
-        toast.innerText = message;
-        toast.classList.add('show');
-        setTimeout(() => toast.classList.remove('show'), 3000);
-    }
-
-    window.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape') toggleDetail(false);
-    });
 });
