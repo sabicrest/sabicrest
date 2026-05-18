@@ -186,3 +186,10 @@ h2.mixed-title {
         padding-right: 0.75rem;
     }
 }
+
+/* Custom style for the 'I' in the Sabicrest logo */
+.sabicrest-logo .long-i {
+    display: inline-block;
+    transform: scale(1.2, 1.2) skewX(-1deg); /* Increased width and height with matching italic slant */
+    transform-origin: center;
+    }

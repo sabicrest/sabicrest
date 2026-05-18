@@ -43,13 +43,37 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     function toggleDetail(show, courseId = null) {
+        const isCoursesPage = !!document.getElementById('all-courses-grid');
+        const coursesMain = document.querySelector('main');
+        const pageHero = document.querySelector('main > .mb-16');
+        const filterBar = document.querySelector('.flex.flex-col.md\\:flex-row.gap-6.mb-12');
+        const grid = document.getElementById('all-courses-grid');
+
         if (show && courseId) {
             const course = courses.find(c => c.id === parseInt(courseId));
             renderCourseDetail(course);
+
+            if (isCoursesPage) {
+                // Transition to dynamic "page" view
+                pageHero?.classList.add('hidden');
+                filterBar?.classList.add('hidden');
+                grid?.classList.add('hidden');
+                detailOverlay.classList.remove('fixed', 'inset-0', 'bg-white/95', 'z-[110]');
+                detailOverlay.classList.add('relative', 'min-h-screen', 'bg-white');
+            } else {
+                detailOverlay.classList.add('flex');
+                document.body.style.overflow = 'hidden';
+            }
             detailOverlay.classList.remove('hidden');
-            detailOverlay.classList.add('flex');
-            document.body.style.overflow = 'hidden';
+            window.scrollTo({ top: 0, behavior: 'smooth' });
         } else {
+            if (isCoursesPage) {
+                pageHero?.classList.remove('hidden');
+                filterBar?.classList.remove('hidden');
+                grid?.classList.remove('hidden');
+                detailOverlay.classList.add('fixed', 'inset-0', 'bg-white/95', 'z-[110]');
+                detailOverlay.classList.remove('relative', 'min-h-screen', 'bg-white');
+            }
             detailOverlay.classList.add('hidden');
             detailOverlay.classList.remove('flex');
             document.body.style.overflow = 'auto';
