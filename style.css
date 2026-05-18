@@ -17,6 +17,11 @@ html {
     scroll-behavior: smooth;
 }
 
+html {
+    overflow-x: hidden;
+    width: 100%;
+}
+
 body {
     font-family: 'Plus Jakarta Sans', sans-serif;
     background-color: #FFFFFF;
@@ -24,6 +29,7 @@ body {
     background-size: 24px 24px;
     color: #000;
     overflow-x: hidden;
+    width: 100%;
 }
 
 /* General text spacing */
@@ -45,6 +51,7 @@ h1, h2 {
     text-transform: uppercase;
     letter-spacing: -0.05em;
     line-height: 0.95;
+    overflow-wrap: break-word;
 }
 
 h1.mixed-title {
@@ -183,6 +190,11 @@ h2.mixed-title {
 
 @media (max-width: 768px) {
     nav .container-wide {
-        padding-right: 0.75rem;
+        padding-right: 1.5rem;
+        padding-left: 1.5rem;
+    }
+
+    header, section, footer {
+        overflow-x: hidden;
     }
 }
