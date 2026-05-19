@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Successful | Welcome to Sabicrest</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .success-check {
+            animation: scaleIn 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+        @keyframes scaleIn {
+            from { transform: scale(0); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
+    </style>
+</head>
+<body class="antialiased bg-white">
+    <nav class="py-6 border-b border-zinc-100">
+        <div class="container-wide flex justify-center">
+            <a href="index.html" class="sabicrest-logo flex items-center gap-2 text-2xl font-extrabold tracking-tighter">
+                <img src="assets/logo.jpg" alt="Sabicrest Logo" class="h-[1.25em] w-auto">
+                SABICREST
+            </a>
+        </div>
+    </nav>
+
+    <main class="container-wide max-w-4xl py-20 text-center">
+        <div class="mb-12">
+            <div class="w-20 h-20 bg-green-100 text-green-600 rounded-full flex items-center justify-center mx-auto mb-6 success-check">
+                <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path>
+                </svg>
+            </div>
+            <h1 class="mixed-title mb-4">Payment <span>Received.</span></h1>
+            <p class="text-xl text-zinc-500 font-medium">Welcome to the cohort. Your journey to mastery starts now.</p>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-6 text-left">
+            <!-- Step 1: Community -->
+            <div class="bento-card p-8 bg-zinc-950 text-white border-zinc-800">
+                <div class="flex justify-between items-start mb-6">
+                    <span class="bg-yellow-400 text-black text-[10px] px-3 py-1 rounded-full font-black uppercase tracking-widest">Step 01</span>
+                    <span class="text-zinc-500 font-bold text-xs uppercase italic">Immediate</span>
+                </div>
+                <h3 class="text-white text-2xl mb-3">JOIN THE SLACK</h3>
+                <p class="text-zinc-400 text-sm mb-8 leading-relaxed">This is our digital campus. Join your fellow students and mentors to start networking before the first class.</p>
+                <a href="https://slack.com" target="_blank" class="inline-block bg-white text-black px-6 py-3 rounded-xl font-bold text-xs uppercase tracking-widest hover:bg-yellow-400 transition-colors">Join Community</a>
+            </div>
+
+            <!-- Step 2: Onboarding -->
+            <div class="bento-card p-8 bg-zinc-50 border-zinc-100">
+                <div class="flex justify-between items-start mb-6">
+                    <span class="bg-zinc-200 text-zinc-600 text-[10px] px-3 py-1 rounded-full font-black uppercase tracking-widest">Step 02</span>
+                    <span class="text-zinc-400 font-bold text-xs uppercase italic">Required</span>
+                </div>
+                <h3 class="text-zinc-900 text-2xl mb-3">ONBOARDING FORM</h3>
+                <p class="text-zinc-500 text-sm mb-8 leading-relaxed">Complete your student profile so we can tailor the live labs to your experience level and goals.</p>
+                <a href="https://forms.google.com" target="_blank" class="inline-block bg-black text-white px-6 py-3 rounded-xl font-bold text-xs uppercase tracking-widest hover:bg-zinc-800 transition-colors">Complete Profile</a>
+            </div>
+        </div>
+
+        <div class="mt-16 p-8 rounded-[2.5rem] bg-yellow-50 border border-yellow-100 text-left flex flex-col md:flex-row items-center justify-between gap-6">
+            <div>
+                <h4 class="font-bold text-xl mb-1 italic">Check your inbox</h4>
+                <p class="text-yellow-800 text-sm">We've sent a formal receipt and your preliminary reading list to your email.</p>
+            </div>
+            <a href="index.html" class="text-sm font-bold uppercase tracking-widest border-b-2 border-yellow-400 pb-1">Back to Home</a>
+        </div>
+    </main>
+
+    <footer class="py-12 border-t border-zinc-100">
+        <div class="container-wide text-center text-zinc-400 text-[10px] font-bold uppercase tracking-[0.2em]">
+            © 2026 SABICREST LEARNING INC • SECURE ENROLLMENT
+        </div>
+    </footer>
+
+    <!-- Confetti Effect -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+    <script>
+        window.addEventListener('load', () => {
+            confetti({
+                particleCount: 150,
+                spread: 70,
+                origin: { y: 0.6 },
+                colors: ['#FACC15', '#18181b', '#FFFFFF']
+            });
+        });
+    </script>
+    <script src="app.js"></script>
+</body>
+</html>

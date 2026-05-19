@@ -189,7 +189,7 @@ document.addEventListener('DOMContentLoaded', () => {
                             <p class="text-4xl font-extrabold text-zinc-900">$${course.priceUSD.toLocaleString()}</p>
                             <p class="text-zinc-400 text-sm mt-1">Approx. <span class="text-zinc-900 font-bold">₦${priceNGN}</span></p>
                         </div>
-                        <button class="w-full bg-black text-white py-4 rounded-2xl font-bold hover:bg-zinc-800 transition-all mb-4">Secure My Spot</button>
+                        <a href="payment-success.html" class="block text-center w-full bg-black text-white py-4 rounded-2xl font-bold hover:bg-zinc-800 transition-all mb-4">Secure My Spot</a>
                         <p class="text-[10px] text-center text-zinc-400 uppercase font-bold">Next cohort starts in 12 days</p>
                     </div>
                 </div>
@@ -210,7 +210,9 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    closeDetail.addEventListener('click', () => toggleDetail(false));
+    if (closeDetail) {
+        closeDetail.addEventListener('click', () => toggleDetail(false));
+    }
     
     if (searchInput) {
         searchInput.addEventListener('input', (e) => {
@@ -250,6 +252,19 @@ document.addEventListener('DOMContentLoaded', () => {
                 document.body.style.overflow = 'auto';
             });
         });
+    }
+
+    function showToast(message) {
+        const toast = document.createElement('div');
+        toast.className = 'toast-notification show';
+        toast.innerText = message;
+        document.body.appendChild(toast);
+        
+        // Auto-remove after animation
+        setTimeout(() => {
+            toast.classList.remove('show');
+            setTimeout(() => toast.remove(), 400);
+        }, 3000);
     }
 
     // Contact Form Logic
