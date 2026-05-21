@@ -68,7 +68,7 @@ h2.mixed-title {
 
 @media (min-width: 1024px) {
     h1.mixed-title { font-size: 4rem; }
-    h2.mixed-title { font-size: 5rem; }
+    h2.mixed-title { font-size: 4rem; }
     h3 { font-size: 3rem; }
 }
 
