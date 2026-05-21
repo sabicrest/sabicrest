@@ -104,6 +104,17 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function renderCourses() {
         if (!coursesGrid) return;
+
+        const categoryImages = {
+            'Design': '1586717791821-3f44a563eb4c',
+            'Videography': '1492691527719-9d1e07e534b4',
+            'Engineering': '1555066931-4365d14bab8c',
+            'Marketing': '1460925895917-afdab827c52f',
+            'Product': '1553877522-ad3322f77922',
+            'Finance': '1554224155-8d04cb21cd6c',
+            'Data Science': '1551288049-bbbda536339a'
+        };
+
         const filtered = courses.filter(course => {
             const matchesCategory = currentCategory === 'All' || course.category === currentCategory;
             const matchesSearch = course.title.toLowerCase().includes(searchQuery.toLowerCase());
@@ -113,7 +124,7 @@ document.addEventListener('DOMContentLoaded', () => {
         coursesGrid.innerHTML = filtered.map(course => `
             <div class="bento-card p-6 rounded-[2.5rem] hover:shadow-xl hover:shadow-zinc-200/50 hover:border-yellow-400/50 transition-all duration-500 group cursor-pointer flex flex-col h-full relative overflow-hidden" data-id="${course.id}">
                 <div class="aspect-video rounded-2xl overflow-hidden mb-4 bg-gray-100 border border-gray-100">
-                    <img src="https://source.unsplash.com/random/400x250?${course.category.toLowerCase()}" 
+                    <img src="https://images.unsplash.com/photo-${categoryImages[course.category] || '1516321318423-f06f85e504b3'}?auto=format&fit=crop&q=80&w=800" 
                          class="w-full h-full object-cover group-hover:scale-105 transition duration-500" alt="${course.title}">
                 </div>
                 <div class="flex justify-between items-center mb-3">
