@@ -200,11 +200,8 @@ document.addEventListener('DOMContentLoaded', () => {
                             <p class="text-4xl font-extrabold text-zinc-900">$${course.priceUSD.toLocaleString()}</p>
                             <p class="text-zinc-400 text-sm mt-1">Approx. <span class="text-zinc-900 font-bold">₦${priceNGN}</span></p>
                         </div>
-<<<<<<< HEAD
                         <a href="https://paystack.shop/pay/sabicourse" class="block text-center w-full bg-black text-white py-4 rounded-2xl font-bold hover:bg-zinc-800 transition-all mb-4">Secure My Spot</a>
-=======
-                        <a href="https://paystack.shop/pay/sabicourse" target="_blank" class="block text-center w-full bg-black text-white py-4 rounded-2xl font-bold hover:bg-zinc-800 transition-all mb-4">Secure My Spot</a>
->>>>>>> ab41b719995ef75190027755cf9bf732b7f24bcd
+
                         <p class="text-[10px] text-center text-zinc-400 uppercase font-bold">Next cohort starts in 12 days</p>
                     </div>
                 </div>
