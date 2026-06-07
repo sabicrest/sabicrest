@@ -87,19 +87,19 @@
     </section>
 
     <!-- Our Core Values -->
-    <section class="container-wide py-20 border-t border-zinc-100">
+    <section class="container-wide py-20 border-t border-zinc-100 animate-on-scroll" data-animation="slide-in-left">
         <div class="grid lg:grid-cols-3 gap-12">
-            <div class="lg:col-span-1">
+            <div class="lg:col-span-1 animate-on-scroll" data-animation="fade-in-up">
                 <h2 class="mixed-title">Our <span>DNA.</span></h2>
                 <p class="text-zinc-500 mt-6">These aren't just words on a wall. They are the principles that shape every mentor, cohort, and professional community we build.</p>
             </div>
             <div class="lg:col-span-2 grid md:grid-cols-2 gap-6">
-                <div class="p-8 border border-zinc-100 rounded-3xl">
+                <div class="p-8 border border-zinc-100 rounded-3xl animate-on-scroll" data-animation="fade-in-up" style="animation-delay: 0.1s;">
                     <div class="w-10 h-10 bg-zinc-900 text-white rounded-xl flex items-center justify-center mb-6 font-bold">01</div>
                     <h4 class="text-xl font-bold mb-3 italic tracking-tight">Radical Accessibility</h4>
                     <p class="text-zinc-500 text-sm leading-relaxed">We localized our pricing because access to quality mentorship, industry insights, and professional growth shouldn’t be reserved for a privileged few.</p>
                 </div>
-                <div class="p-8 border border-zinc-100 rounded-3xl">
+                <div class="p-8 border border-zinc-100 rounded-3xl animate-on-scroll" data-animation="fade-in-up" style="animation-delay: 0.2s;">
                     <div class="w-10 h-10 bg-yellow-400 text-black rounded-xl flex items-center justify-center mb-6 font-bold">02</div>
                     <h4 class="text-xl font-bold mb-3 italic tracking-tight">Community-Driven Obsession</h4>
                     <p class="text-zinc-500 text-sm leading-relaxed">We don’t measure success by enrollments alone, but by professionals gaining clarity, confidence, opportunities, and meaningful career advancement through community and mentorship.</p>
@@ -108,23 +108,121 @@
         </div>
     </section>
 
+    <!-- Platform Overview Section -->
+    <section class="container-wide py-24 border-t border-zinc-100 animate-on-scroll" data-animation="fade-in-up">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="mixed-title mb-12">Platform <span>Overview.</span></h2>
+            <p class="text-lg text-gray-600 mb-12 leading-relaxed">Sabicrest is a modern learning and professional development platform designed to make it easier for trainers, students, and administrators to work together in one place. Instead of using multiple tools for course management, student assessments, communication, and feedback, Sabicrest brings everything together into a single, organized platform.</p>
+
+            <div class="grid md:grid-cols-2 gap-12 mb-20">
+                <div class="p-8 bg-zinc-50 rounded-3xl animate-on-scroll" data-animation="slide-in-left">
+                    <h3 class="text-2xl font-bold mb-6 italic">For trainers</h3>
+                    <div class="space-y-6">
+                        <div>
+                            <h4 class="font-bold mb-2">Create a Professional Profile</h4>
+                            <p class="text-zinc-500 text-sm">Every trainer begins by creating a professional profile where they can showcase their qualifications, experience, skills, certifications, and areas of expertise. Before a trainer can publish courses, their profile is reviewed and approved by the Sabicrest administration team.</p>
+                        </div>
+                        <div>
+                            <h4 class="font-bold mb-2">Create and Propose New Courses</h4>
+                            <p class="text-zinc-500 text-sm">Once approved, trainers gain access to the Course Proposal Builder. This guided system allows trainers to create complete programs by providing course title, description, duration, skill level, and weekly lesson breakdowns.</p>
+                        </div>
+                        <div>
+                            <h4 class="font-bold mb-2">Flexible Course Categories</h4>
+                            <p class="text-zinc-500 text-sm">Trainers can choose from several professional categories, including Business, Marketing, Tech, Design, Finance, and Vocational Skills. Niche experts can even create custom subject areas.</p>
+                        </div>
+                        <div>
+                            <h4 class="font-bold mb-2">Assignments and Student Evaluation</h4>
+                            <p class="text-zinc-500 text-sm">Throughout the learning process, trainers can create assignments. They can review submissions, provide feedback, track progress, and assess performance using a professional grading system.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="space-y-8 animate-on-scroll" data-animation="slide-in-right">
+                    <div class="p-8 border border-zinc-100 rounded-3xl">
+                        <h3 class="text-2xl font-bold mb-6 italic">For administrators</h3>
+                        <div class="space-y-4">
+                            <h4 class="font-bold">Course Approval System</h4>
+                            <p class="text-zinc-500 text-sm">When a trainer finishes creating a course, it enters an approval queue where administrators review the structure and quality standards before it is publicly published for student discovery.</p>
+                        </div>
+                    </div>
+                    <div class="p-8 bg-zinc-950 text-white rounded-3xl">
+                        <h3 class="text-2xl font-bold mb-6 italic text-yellow-400">For students</h3>
+                        <div class="space-y-4">
+                            <h4 class="font-bold">Discover Professional Courses</h4>
+                            <p class="text-zinc-400 text-sm">Students have access to a clean and user-friendly marketplace featuring approved and verified programs. Registration is easy, granting instant access to modules and tasks.</p>
+                            <h4 class="font-bold">Complete Tasks and Build Skills</h4>
+                            <p class="text-zinc-400 text-sm">Students progress through project-based tasks. Completed work is uploaded directly to the platform for personalized feedback from trainers, creating a hands-on experience.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Verified Badge Info -->
+            <div class="bg-yellow-400 p-10 rounded-[2.5rem] mb-20 flex flex-col md:flex-row items-center gap-8 animate-on-scroll" data-animation="zoom-in">
+                <div class="w-24 h-24 bg-black rounded-full flex items-center justify-center shrink-0 shadow-xl">
+                    <svg class="w-12 h-12 text-yellow-400" fill="currentColor" viewBox="0 0 24 24"><path d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"></path></svg>
+                </div>
+                <div>
+                    <h3 class="text-3xl font-black uppercase mb-4">Verified trainer recognition</h3>
+                    <p class="font-medium text-black/80">To help students identify trusted educators, Sabicrest features a Verified trainer Program. Trainers who successfully complete the platform's verification receive an official Sabicrest Verified Badge with a distinctive gold premium design to symbolize credibility and trust.</p>
+                </div>
+            </div>
+
+            <!-- Communication System -->
+            <div class="mb-20 animate-on-scroll" data-animation="fade-in-down">
+                <h2 class="mixed-title mb-8">Real-Time <span>Communication.</span></h2>
+                <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div class="p-6 border border-zinc-100 rounded-2xl animate-on-scroll" data-animation="fade-in-up" style="animation-delay: 0s;">
+                        <h4 class="font-bold mb-2">Direct Messaging</h4>
+                        <p class="text-zinc-500 text-sm">Private conversations for feedback, questions, and direct mentorship between students and trainers.</p>
+                    </div>
+                    <div class="p-6 border border-zinc-100 rounded-2xl animate-on-scroll" data-animation="fade-in-up" style="animation-delay: 0.1s;">
+                        <h4 class="font-bold mb-2">Group Announcements</h4>
+                        <p class="text-zinc-500 text-sm">Trainers can send announcements to entire classes instantly about new lessons or deadlines.</p>
+                    </div>
+                    <div class="p-6 border border-zinc-100 rounded-2xl animate-on-scroll" data-animation="fade-in-up" style="animation-delay: 0.2s;">
+                        <h4 class="font-bold mb-2">Study Communities</h4>
+                        <p class="text-zinc-500 text-sm">Dedicated discussion channels where classmates can collaborate, share ideas, and ask questions.</p>
+                    </div>
+                    <div class="p-6 border border-zinc-100 rounded-2xl animate-on-scroll" data-animation="fade-in-up" style="animation-delay: 0.3s;">
+                        <h4 class="font-bold mb-2">Instant Updates</h4>
+                        <p class="text-zinc-500 text-sm">Messages appear instantly without refreshing. Smooth and responsive experience similar to modern messaging apps.</p>
+                    </div>
+                    <div class="p-6 border border-zinc-100 rounded-2xl animate-on-scroll" data-animation="fade-in-up" style="animation-delay: 0.4s;">
+                        <h4 class="font-bold mb-2">Read Receipts</h4>
+                        <p class="text-zinc-500 text-sm">Transparent communication with status indicators: Sent, Delivered, and Read.</p>
+                    </div>
+                    <div class="p-6 border border-zinc-100 rounded-2xl animate-on-scroll" data-animation="fade-in-up" style="animation-delay: 0.5s;">
+                        <h4 class="font-bold mb-2">Smart Search</h4>
+                        <p class="text-zinc-500 text-sm">Powerful search feature to quickly find conversations, students, trainers, or past messages.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="p-12 bg-zinc-50 rounded-[3rem] text-center animate-on-scroll" data-animation="zoom-in">
+                <h2 class="mixed-title mb-6">The Sabicrest <span>Vision.</span></h2>
+                <p class="text-zinc-600 max-w-2xl mx-auto italic">"Sabicrest is more than just a course platform. It is a complete learning, evaluation, mentorship, and collaboration ecosystem designed to connect skilled professionals with learners while maintaining high educational standards."</p>
+            </div>
+        </div>
+    </section>
+
     <!-- The Methodology Section -->
-    <section class="bg-zinc-50 py-24">
+    <section class="bg-zinc-50 py-24 animate-on-scroll" data-animation="fade-in-down">
         <div class="container-wide">
             <div class="max-w-3xl mb-16">
                 <h2 class="mixed-title">The "Sabi" <span>Methodology.</span></h2>
                 <p class="text-zinc-500 mt-4 text-lg">Beyond recorded lessons. We built a collaborative ecosystem that mirrors how professionals actually grow in high-performance environments.</p>
             </div>
             <div class="grid md:grid-cols-3 gap-8">
-                <div class="bg-white p-8 rounded-[2.5rem] border border-zinc-200">
+                <div class="bg-white p-8 rounded-[2.5rem] border border-zinc-200 animate-on-scroll" data-animation="fade-in-up" style="animation-delay: 0s;">
                     <h4 class="font-bold text-xl mb-4 italic underline decoration-yellow-400 underline-offset-4">Cohort Accountability</h4>
                     <p class="text-zinc-500 text-sm leading-relaxed">You learn alongside ambitious professionals in tightly-knit groups. Peer accountability, mentorship, and live collaboration ensure no one grows alone.</p>
                 </div>
-                <div class="bg-white p-8 rounded-[2.5rem] border border-zinc-200">
+                <div class="bg-white p-8 rounded-[2.5rem] border border-zinc-200 animate-on-scroll" data-animation="fade-in-up" style="animation-delay: 0.1s;">
                     <h4 class="font-bold text-xl mb-4 italic underline decoration-yellow-400 underline-offset-4">Project-First Learning</h4>
                     <p class="text-zinc-500 text-sm leading-relaxed">Theory has its place. But at Sabicrest, learning revolves around practical execution, guided projects, industry simulations, and real professional feedback.</p>
                 </div>
-                <div class="bg-white p-8 rounded-[2.5rem] border border-zinc-200">
+                <div class="bg-white p-8 rounded-[2.5rem] border border-zinc-200 animate-on-scroll" data-animation="fade-in-up" style="animation-delay: 0.2s;">
                     <h4 class="font-bold text-xl mb-4 italic underline decoration-yellow-400 underline-offset-4">Direct Industry Access</h4>
                     <p class="text-zinc-500 text-sm leading-relaxed">Our mentors are active professionals, founders, consultants, creatives, and operators across leading organizations and growing companies. They share the practical insights, systems, and “unwritten rules” most platforms never teach.</p>
                 </div>
@@ -133,14 +231,14 @@
     </section>
 
     <!-- The Problem & Solution -->
-    <section class="container-wide py-20 border-t border-zinc-100">
+    <section class="container-wide py-20 border-t border-zinc-100 animate-on-scroll" data-animation="zoom-in">
         <h2 class="mixed-title mb-16">The <span>Problem.</span></h2>
         <div class="grid md:grid-cols-2 gap-8">
-            <div class="bento-card p-10 bg-zinc-50 border-zinc-100">
+            <div class="bento-card p-10 bg-zinc-50 border-zinc-100 animate-on-scroll" data-animation="slide-in-left">
                 <h3 class="text-2xl italic mb-4">The "Zombie" Learning Crisis</h3>
                 <p class="text-zinc-500 leading-relaxed">Most platforms struggle with engagement because learning alone is difficult. Pre-recorded videos often lack mentorship, accountability, practical feedback, and genuine human connection. Many aspiring professionals in Africa also face pricing barriers and learning systems disconnected from local realities..</p>
             </div>
-            <div class="bento-card p-10 bg-yellow-400 text-black border-yellow-500">
+            <div class="bento-card p-10 bg-yellow-400 text-black border-yellow-500 animate-on-scroll" data-animation="slide-in-right">
                 <h3 class="text-2xl italic mb-4">The Sabicrest Solution</h3>
                 <p class="font-medium leading-relaxed">We solved this by making learning live, collaborative, and mentorship-driven. No isolated learning experiences here. We built a professional ecosystem where people can learn directly from vetted experts, build alongside peers, access localized opportunities, and develop industry-ready skills through active participation.</p>
             </div>
@@ -148,24 +246,24 @@
     </section>
 
     <!-- Team Section -->
-    <section class="container-wide py-20">
+    <section class="container-wide py-20 animate-on-scroll" data-animation="fade-in-up">
         <h2 class="mixed-title mb-16">The Brains <span>Behind Sabicrest.</span></h2>
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div class="group">
+            <div class="group animate-on-scroll" data-animation="fade-in-up" style="animation-delay: 0s;">
                 <div class="aspect-[4/5] bg-zinc-100 rounded-[2.5rem] overflow-hidden mb-6 relative">
                     <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=800" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" alt="Prince Dike">
                 </div>
                 <h4 class="text-xl font-bold">Prince Dike</h4>
                 <p class="text-xs uppercase font-black text-zinc-400 tracking-widest mt-1 italic">Founder CEO</p>
             </div>
-            <div class="group">
+            <div class="group animate-on-scroll" data-animation="fade-in-up" style="animation-delay: 0.1s;">
                 <div class="aspect-[4/5] bg-zinc-100 rounded-[2.5rem] overflow-hidden mb-6 relative">
                     <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&q=80&w=800" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" alt="Paul Iyamu">
                 </div>
                 <h4 class="text-xl font-bold">Paul Iyamu</h4>
                 <p class="text-xs uppercase font-black text-zinc-400 tracking-widest mt-1 italic">Co-Founder</p>
             </div>
-            <div class="group">
+            <div class="group animate-on-scroll" data-animation="fade-in-up" style="animation-delay: 0.2s;">
                 <div class="aspect-[4/5] bg-zinc-100 rounded-[2.5rem] overflow-hidden mb-6 relative">
                     <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&q=80&w=400" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" alt="Bernard Michael">
                 </div>
@@ -176,7 +274,7 @@
     </section>
 
     <!-- Contact Section -->
-    <section class="container-wide py-20 border-t border-zinc-100">
+    <section class="container-wide py-20 border-t border-zinc-100 animate-on-scroll" data-animation="fade-in-up">
         <div class="bento-card bg-zinc-950 p-8 md:p-16 relative overflow-hidden group">
             <!-- Glassmorphism Card -->
             <div class="relative z-10 max-w-2xl mx-auto text-center">
@@ -220,17 +318,17 @@
     </section>
 
     <!-- Mentor Registration Section -->
-    <section class="container-wide py-20 border-t border-zinc-100">
+    <section class="container-wide py-20 border-t border-zinc-100 animate-on-scroll" data-animation="zoom-in">
         <div class="grid lg:grid-cols-2 gap-16 items-center">
-            <div>
-                <h2 class="mixed-title mb-6">Become a <span>Sabi Mentor.</span></h2>
-                <p class="text-lg text-gray-600 mb-8 max-w-md">Are you an industry expert? Join our vetted network of trainers and mentors. Submit your course proposal and help shape the next generation of global talent.</p>
+            <div class="animate-on-scroll" data-animation="slide-in-left">
+                <h2 class="mixed-title mb-6">Become a <span>Sabi mentor.</span></h2>
+                <p class="text-lg text-gray-600 mb-8 max-w-md">Are you an industry expert? Join our vetted network of trainers and mentors. help shape the next generation of global talent.</p>
                 <div class="flex gap-4">
                     <button class="bg-black text-white px-8 py-4 rounded-2xl font-bold text-xs uppercase tracking-widest hover:bg-zinc-800 transition-all">Register as Mentor</button>
                     <button class="border border-zinc-200 text-zinc-900 px-8 py-4 rounded-2xl font-bold text-xs uppercase tracking-widest hover:bg-zinc-50 transition-all">Submit Proposal</button>
                 </div>
             </div>
-            <div class="bento-card p-10 bg-yellow-400 border-yellow-500">
+            <div class="bento-card p-10 bg-yellow-400 border-yellow-500 animate-on-scroll" data-animation="slide-in-right">
                 <h3 class="text-2xl italic mb-6">Trainer Application</h3>
                 <form class="space-y-4">
                     <div class="grid grid-cols-2 gap-4">
@@ -256,24 +354,24 @@
     </section>
 
     <!-- Roadmap Section -->
-    <section class="container-wide py-20 border-t border-zinc-100">
+    <section class="container-wide py-20 border-t border-zinc-100 animate-on-scroll" data-animation="fade-in-up">
         <h2 class="mixed-title mb-16 text-center">Our <span>Roadmap.</span></h2>
         <div class="max-w-3xl mx-auto space-y-12">
-            <div class="flex gap-8 items-start">
+            <div class="flex gap-8 items-start animate-on-scroll" data-animation="slide-in-left">
                 <div class="text-yellow-500 font-black text-xl italic pt-1">Q3 2026</div>
                 <div>
                     <h4 class="text-xl font-bold mb-2 uppercase italic tracking-tighter">Physical Hubs Launch</h4>
                     <p class="text-zinc-500">Opening our first three in-person learning labs in the cities of Ibadan, Lagos, and Port Harcourt to foster community and focus.</p>
                 </div>
             </div>
-            <div class="flex gap-8 items-start">
+            <div class="flex gap-8 items-start animate-on-scroll" data-animation="slide-in-left" style="animation-delay: 0.1s;">
                 <div class="text-zinc-300 font-black text-xl italic pt-1">Q1 2027</div>
                 <div>
                     <h4 class="text-xl font-bold mb-2 uppercase italic tracking-tighter">AI Learning Assistant</h4>
                     <p class="text-zinc-500">Integrating "Sabi-AI" into our student dashboard to provide 24/7 personalized project feedback based on live lecture data.</p>
                 </div>
             </div>
-            <div class="flex gap-8 items-start">
+            <div class="flex gap-8 items-start animate-on-scroll" data-animation="slide-in-left" style="animation-delay: 0.2s;">
                 <div class="text-zinc-300 font-black text-xl italic pt-1">2028</div>
                 <div>
                     <h4 class="text-xl font-bold mb-2 uppercase italic tracking-tighter">Global Expansion</h4>
