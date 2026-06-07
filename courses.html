@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Online Courses & Live Bootcamps | Sabicrest EdTech Curriculum</title>
     <meta name="description" content="Explore 50+ industry-leading live online programs. Master high-paying skills in Tech, Design, and Marketing with Sabicrest's immersive EdTech model.">
-    <link rel="canonical" href="https://sabicrest.com/courses.html">
+    <link rel="canonical" href="https://sabicrest.cc/courses.html">
     <meta property="og:title" content="Our Curriculum | Master Marketable Skills with Sabicrest">
     <meta property="og:description" content="Browse our catalog of live, project-based courses designed for global career growth.">
 
@@ -20,21 +20,24 @@
 <body class="antialiased">
 
     <!-- Dynamic Detail Overlay -->
-    <div id="detail-overlay" class="fixed inset-0 bg-white/95 backdrop-blur-3xl z-[110] hidden overflow-y-auto pt-12 pb-10">
+    <div id="detail-overlay" class="fixed inset-0 bg-white/95 backdrop-blur-3xl z-[110] hidden overflow-y-auto pt-8 md:pt-12 pb-10">
         <div class="container-wide max-w-6xl">
-            <div class="flex justify-between items-center mb-16">
+            <div class="flex justify-between items-center mb-10 md:mb-16">
                 <button id="close-detail" class="flex items-center gap-2 text-zinc-400 hover:text-zinc-900 font-bold uppercase text-[10px] tracking-widest transition-colors">
                     <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
                     Back to Browse
                 </button>
-                <div class="text-[10px] font-black tracking-widest uppercase text-yellow-500">Course Prospectus</div>
+                <div class="flex items-center gap-3">
+                    <a href="https://app.sabicrest.cc" class="md:hidden bg-yellow-400 text-black px-4 py-2 rounded-full font-bold text-[10px] uppercase tracking-widest shadow-lg shadow-yellow-400/20">See Price</a>
+                    <div class="text-[10px] font-black tracking-widest uppercase text-yellow-500">Course Prospectus</div>
+                </div>
             </div>
             <div id="detail-content"></div>
         </div>
     </div>
 
     <!-- Navigation -->
-    <nav class="sticky top-0 z-50 bg-white/70 backdrop-blur-xl border-b border-gray-100/50">
+    <nav class="fixed top-0 left-0 right-0 z-50 bg-white/70 backdrop-blur-xl border-b border-gray-100/50">
         <div class="container-wide py-4 flex justify-between items-center">
             <a href="index.html" class="sabicrest-logo flex items-center gap-2 text-2xl font-extrabold tracking-tighter hover:opacity-80 transition-opacity cursor-pointer">
                 <img src="assets/logo.jpg" alt="Sabicrest Logo" class="h-[1.25em] w-auto">
@@ -50,7 +53,7 @@
             </div>
             <div class="flex items-center gap-1 md:gap-4">
                 <button id="enroll-btn" class="bg-yellow-400 text-black px-4 py-2 md:px-7 md:py-3 rounded-full font-bold text-[10px] md:text-xs uppercase tracking-widest hover:bg-yellow-500 hover:shadow-lg hover:shadow-yellow-400/20 transition-all active:scale-95">
-                    Enroll
+                    ENTER PORTAL
                 </button>
                 <button id="mobile-menu-btn" class="md:hidden pl-2 pr-0 py-2 text-zinc-900 focus:outline-none">
                     <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -88,12 +91,12 @@
     </nav>
 
     <!-- Course Page Content -->
-    <main class="container-wide pt-8 pb-16 md:py-16">
+    <main class="container-wide pt-28 pb-16 md:pt-36">
         <div class="mb-16">
             <h1 class="mixed-title mb-4">Our Curriculum</h1>
             <p class="text-lg text-gray-600 mb-4 md:mb-8 max-w-md leading-snug">Browse 50+ industry-leading live programs designed to make you marketable globally.</p>
             <div class="flex flex-wrap gap-3 md:gap-6">
-                <a href="#category-filters" class="bg-yellow-400 text-black px-10 py-5 rounded-none text-sm font-bold uppercase tracking-widest hover:bg-yellow-500 transition-all">Get Started</a>
+                <a href="https://app.sabicrest.cc" class="bg-yellow-400 text-black px-10 py-5 rounded-none text-sm font-bold uppercase tracking-widest hover:bg-yellow-500 transition-all">Get Started</a>
             </div>
         </div>
 
@@ -149,4 +152,4 @@
 
     <script src="app.js"></script>
 </body>
-</html>
+</html>>
